@@ -26,7 +26,11 @@ namespace PuzzlesRunner
                     case "02":
                         return Solve(
                             File.ReadAllLines(GetInputFileName(dayNumber)).Select(rowText => rowText.Split('\t')).Select(rowCellsText => rowCellsText.Select(cellText => int.Parse(cellText))),
-                            input => Day02_Checksum.Checksum.Solve(input));
+                            input => Day02_Checksum.Checksum.SolveMinMax(input));
+                    case "02b":
+                        return Solve(
+                            File.ReadAllLines(GetInputFileName(dayNumber.Substring(0, 2))).Select(rowText => rowText.Split('\t')).Select(rowCellsText => rowCellsText.Select(cellText => int.Parse(cellText))),
+                            input => Day02_Checksum.Checksum.SolveEvenlyDivisible(input));
                     default:
                         return $"Day '{dayNumber}' is not yet solved.";
                 }
