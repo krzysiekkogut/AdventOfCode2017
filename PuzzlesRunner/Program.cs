@@ -13,10 +13,16 @@ namespace PuzzlesRunner
                 case "01":
                     WriteLine(Day01_Captcha.Captcha.Solve(input));
                     break;
+                case "01b":
+                    WriteLine(Day01_Captcha.Captcha.Solve(input, input.Length / 2));
+                    break;
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     break;
             }
+
+            WriteLine("Press any key to finish...");
+            ReadKey();
         }
     }
 }
