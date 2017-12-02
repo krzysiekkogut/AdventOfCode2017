@@ -21,7 +21,7 @@ namespace PuzzlesRunner
                             input => Day01_Captcha.Captcha.Solve(input));
                     case "01b":
                         return Solve(
-                            File.ReadAllText(GetInputFileName(dayNumber)),
+                            File.ReadAllText(GetInputFileName(dayNumber.Substring(0, 2))),
                             input => Day01_Captcha.Captcha.Solve(input, input.Length / 2));
                     case "02":
                         return Solve(
