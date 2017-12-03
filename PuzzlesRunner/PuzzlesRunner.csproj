@@ -58,6 +58,14 @@
       <Project>{68949da7-65ef-485d-bcec-6229ea45ae3a}</Project>
       <Name>Day02_Checksum</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day03_SpiralMemory\Day03_SpiralMemory.csproj">
+      <Project>{7454f99f-dff8-4d2c-bb3d-34fd794fe021}</Project>
+      <Name>Day03_SpiralMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,15 +1,17 @@
-﻿namespace Day01_Captcha
+﻿using Shared;
+
+namespace Day01_Captcha
 {
-    public class Captcha
+    public class Captcha : PuzzleSolver<CaptchaInput>, IPuzzleSolver
     {
-        public static int Solve(string input, int step = 1)
+        protected override int SolveInternal(CaptchaInput input)
         {
             var result = 0;
-            for (var currentPosiion = 0; currentPosiion < input.Length; currentPosiion++)
+            for (var currentPosiion = 0; currentPosiion < input.Text.Length; currentPosiion++)
             {
-                var nextPosition = (currentPosiion + step) % input.Length;
-                var currentDigit = int.Parse(input[currentPosiion].ToString());
-                var nextDigit = int.Parse(input[nextPosition].ToString());
+                var nextPosition = (currentPosiion + input.Step) % input.Text.Length;
+                var currentDigit = int.Parse(input.Text[currentPosiion].ToString());
+                var nextDigit = int.Parse(input.Text[nextPosition].ToString());
                 if (currentDigit == nextDigit)
                 {
                     result += currentDigit;

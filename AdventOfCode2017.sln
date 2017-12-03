@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day01_Captcha", "Day01_Capt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day02_Checksum", "Day02_Checksum\Day02_Checksum.csproj", "{68949DA7-65EF-485D-BCEC-6229EA45AE3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day03_SpiralMemory", "Day03_SpiralMemory\Day03_SpiralMemory.csproj", "{7454F99F-DFF8-4D2C-BB3D-34FD794FE021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{FC1694EA-6067-4D8C-B978-2F90FA295C7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{68949DA7-65EF-485D-BCEC-6229EA45AE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68949DA7-65EF-485D-BCEC-6229EA45AE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68949DA7-65EF-485D-BCEC-6229EA45AE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7454F99F-DFF8-4D2C-BB3D-34FD794FE021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7454F99F-DFF8-4D2C-BB3D-34FD794FE021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7454F99F-DFF8-4D2C-BB3D-34FD794FE021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7454F99F-DFF8-4D2C-BB3D-34FD794FE021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1694EA-6067-4D8C-B978-2F90FA295C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1694EA-6067-4D8C-B978-2F90FA295C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1694EA-6067-4D8C-B978-2F90FA295C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1694EA-6067-4D8C-B978-2F90FA295C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

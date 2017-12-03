@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using Shared;
 
 namespace Day02_Checksum
 {
-    public class Checksum
+    public class CheckSumEvenlyDivisible : PuzzleSolver<ChecksumInput>, IPuzzleSolver
     {
-        public static int SolveMinMax(IEnumerable<IEnumerable<int>> spreadsheet)
+        protected override int SolveInternal(ChecksumInput input)
         {
-            return spreadsheet
-                .Select(row => (Max: row.Max(), Min: row.Min()))
-                .Select(rowMinMax => rowMinMax.Max - rowMinMax.Min)
-                .Sum();
-        }
-
-        public static int SolveEvenlyDivisible(IEnumerable<IEnumerable<int>> spreadsheet)
-        {
-            return spreadsheet
+            return input.Spreadsheet
                 .Select(row =>
                 {
                     var cells = row.ToArray();
