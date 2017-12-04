@@ -37,7 +37,6 @@ namespace PuzzlesRunner
             switch (dayNumber)
             {
                 case "01":
-                    return new Captcha();
                 case "01b":
                     return new Captcha();
                 case "02":
@@ -46,6 +45,8 @@ namespace PuzzlesRunner
                     return new CheckSumEvenlyDivisible();
                 case "03":
                     return new SpiralMemory();
+                case "03b":
+                    return new SpiralMemorySumOfAdjacentRegistries();
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
@@ -62,10 +63,10 @@ namespace PuzzlesRunner
                 case "01b":
                     return new CaptchaInput { Text = File.ReadAllText(GetInputFileName(dayNumber)), IsStepByOne = false } as IPuzzleInput;
                 case "02":
-                    return new ChecksumInput { Spreadsheet = File.ReadAllLines(GetInputFileName(dayNumber)).Select(rowText => rowText.Split('\t')).Select(rowCellsText => rowCellsText.Select(cellText => int.Parse(cellText))) } as IPuzzleInput;
                 case "02b":
                     return new ChecksumInput { Spreadsheet = File.ReadAllLines(GetInputFileName(dayNumber)).Select(rowText => rowText.Split('\t')).Select(rowCellsText => rowCellsText.Select(cellText => int.Parse(cellText))) } as IPuzzleInput;
                 case "03":
+                case "03b":
                     return new SpiralMemoryInput { RegistryNumber = int.Parse(File.ReadAllText(GetInputFileName(dayNumber))) } as IPuzzleInput;
                 default:
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
