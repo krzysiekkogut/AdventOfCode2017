@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60B94D1F-AACF-457E-98F4-D21542BE50F1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>PuzzlesRunner</RootNamespace>
-    <AssemblyName>PuzzlesRunner</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ProjectGuid>{0AD402FF-0528-4B14-832F-638F488F0465}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Day04_Passphrases</RootNamespace>
+    <AssemblyName>Day04_Passphrases</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,31 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Passphrases .cs" />
+    <Compile Include="PassphrasesInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="day04b_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="day04_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Day01_Captcha\Day01_Captcha.csproj">
-      <Project>{f378e6d6-0be3-43d0-b91e-c63137521454}</Project>
-      <Name>Day01_Captcha</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Day02_Checksum\Day02_Checksum.csproj">
-      <Project>{68949da7-65ef-485d-bcec-6229ea45ae3a}</Project>
-      <Name>Day02_Checksum</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Day03_SpiralMemory\Day03_SpiralMemory.csproj">
-      <Project>{7454f99f-dff8-4d2c-bb3d-34fd794fe021}</Project>
-      <Name>Day03_SpiralMemory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Day04_Passphrases\Day04_Passphrases.csproj">
-      <Project>{0AD402FF-0528-4B14-832F-638F488F0465}</Project>
-      <Name>Day04_Passphrases</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
-      <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
+      <Project>{FC1694EA-6067-4D8C-B978-2F90FA295C7B}</Project>
       <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
