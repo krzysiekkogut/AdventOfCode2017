@@ -61,12 +61,6 @@ namespace Day03_SpiralMemory
                 }
             }
 
-            Console.WriteLine($"ord: {layerOrder}");
-            Console.WriteLine($"lay: {numberOfLayers}");
-            Console.WriteLine($"max: {maxRegistryNumber}");
-            Console.WriteLine($"  x: {xCoordinate}");
-            Console.WriteLine($"  y: {yCoordinate}");
-
             return numberOfLayers;
         }
 

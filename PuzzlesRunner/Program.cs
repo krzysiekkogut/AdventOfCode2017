@@ -7,6 +7,7 @@ using Day03_SpiralMemory;
 using Shared;
 using static System.Console;
 using Day04_Passphrases;
+using Day05_Trampolines;
 
 namespace PuzzlesRunner
 {
@@ -51,6 +52,9 @@ namespace PuzzlesRunner
                 case "04":
                 case "04b":
                     return new Passphrases();
+                case "05":
+                case "05b":
+                    return new Trampolines();
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
@@ -100,6 +104,18 @@ namespace PuzzlesRunner
                     {
                         Passphrases = File.ReadAllLines(GetInputFileName(dayNumber)).Select(passphraseText => passphraseText.Split(' ')),
                         AreAnagramsAllowed = false
+                    };
+                case "05":
+                    return new TrampolinesInput
+                    {
+                        Instructions = File.ReadAllLines(GetInputFileName(dayNumber)).Select(instructionText => int.Parse(instructionText)).ToArray(),
+                        DecrementWhenJumpIsThreeOrMore = false
+                    };
+                case "05b":
+                    return new TrampolinesInput
+                    {
+                        Instructions = File.ReadAllLines(GetInputFileName(dayNumber)).Select(instructionText => int.Parse(instructionText)).ToArray(),
+                        DecrementWhenJumpIsThreeOrMore = true
                     };
                 default:
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
