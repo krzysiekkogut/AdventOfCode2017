@@ -5,6 +5,11 @@ namespace Day02_Checksum
 {
     public class ChecksumMinMax : PuzzleSolver<ChecksumInput>, IPuzzleSolver
     {
+        protected override ChecksumInput ParseInput(string inputText)
+        {
+            return new ChecksumInput().ParseFromText(inputText);
+        }
+
         protected override int SolveInternal(ChecksumInput input)
         {
             return input.Spreadsheet

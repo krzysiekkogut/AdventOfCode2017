@@ -70,6 +70,10 @@
       <Project>{6CC899F0-7B92-4923-AA19-3D305BB4FC42}</Project>
       <Name>Day05_Trampolines</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day06_MemoryReallocation\Day06_MemoryReallocation.csproj">
+      <Project>{8F2B302A-B63E-457E-B082-3351EA99538C}</Project>
+      <Name>Day06_MemoryReallocation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

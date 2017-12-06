@@ -5,6 +5,11 @@ namespace Day03_SpiralMemory
 {
     public class SpiralMemory : PuzzleSolver<SpiralMemoryInput>, IPuzzleSolver
     {
+        protected override SpiralMemoryInput ParseInput(string inputText)
+        {
+            return new SpiralMemoryInput().ParseFromText(inputText);
+        }
+
         protected override int SolveInternal(SpiralMemoryInput input)
         {
             var layerOrder = Convert.ToInt32(Math.Ceiling(Math.Sqrt(input.RegistryNumber)));

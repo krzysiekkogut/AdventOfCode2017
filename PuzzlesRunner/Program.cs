@@ -4,10 +4,11 @@ using System.Linq;
 using Day01_Captcha;
 using Day02_Checksum;
 using Day03_SpiralMemory;
-using Shared;
-using static System.Console;
 using Day04_Passphrases;
 using Day05_Trampolines;
+using Day06_MemoryReallocation;
+using Shared;
+using static System.Console;
 
 namespace PuzzlesRunner
 {
@@ -15,22 +16,28 @@ namespace PuzzlesRunner
     {
         static void Main()
         {
-            WriteLine("Type puzzle number:");
-            try
+            while (true)
             {
-                var dayNumber = ReadLine();
-                var puzzleInput = GetPuzzleInput(dayNumber);
-                var puzzleSolver = GetPuzzleSolver(dayNumber);
-                WriteLine(puzzleSolver.Solve(puzzleInput));
-            }
-            catch (Exception e)
-            {
-                WriteLine($"Error occured. Message: {e.Message}");
-            }
-            finally
-            {
-                WriteLine("Press any key to finish...");
-                ReadKey();
+                WriteLine("Type puzzle number or 'exit':");
+                try
+                {
+                    var dayNumber = ReadLine();
+                    if (dayNumber.Equals("exit", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return;
+                    }
+
+                    var puzzleSolver = GetPuzzleSolver(dayNumber);
+                    WriteLine(puzzleSolver.Solve(GetRawInputForDay(dayNumber)));
+                }
+                catch (Exception e)
+                {
+                    WriteLine($"Error occured. Message: {e.Message}");
+                }
+                finally
+                {
+                    WriteLine();
+                }
             }
         }
 
@@ -39,8 +46,9 @@ namespace PuzzlesRunner
             switch (dayNumber)
             {
                 case "01":
+                    return new Captcha(true);
                 case "01b":
-                    return new Captcha();
+                    return new Captcha(false);
                 case "02":
                     return new ChecksumMinMax();
                 case "02b":
@@ -50,78 +58,23 @@ namespace PuzzlesRunner
                 case "03b":
                     return new SpiralMemorySumOfAdjacentRegistries();
                 case "04":
+                    return new Passphrases(true);
                 case "04b":
-                    return new Passphrases();
+                    return new Passphrases(false);
                 case "05":
+                    return new Trampolines(false);
                 case "05b":
-                    return new Trampolines();
+                    return new Trampolines(true);
+                case "06":
+                    return new MemoryReallocation(false);
+                case "06b":
+                    return new MemoryReallocation(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
-
             }
         }
 
-        private static IPuzzleInput GetPuzzleInput(string dayNumber)
-        {
-            switch (dayNumber)
-            {
-                case "01":
-                    return new CaptchaInput
-                    {
-                        Text = File.ReadAllText(GetInputFileName(dayNumber)),
-                        IsStepByOne = true
-                    } as IPuzzleInput;
-                case "01b":
-                    return new CaptchaInput
-                    {
-                        Text = File.ReadAllText(GetInputFileName(dayNumber)),
-                        IsStepByOne = false
-                    } as IPuzzleInput;
-                case "02":
-                case "02b":
-                    return new ChecksumInput
-                    {
-                        Spreadsheet =
-                            File.ReadAllLines(GetInputFileName(dayNumber))
-                            .Select(rowText => rowText.Split('\t'))
-                            .Select(rowCellsText => rowCellsText.Select(cellText => int.Parse(cellText)))
-                    } as IPuzzleInput;
-                case "03":
-                case "03b":
-                    return new SpiralMemoryInput
-                    {
-                        RegistryNumber = int.Parse(File.ReadAllText(GetInputFileName(dayNumber)))
-                    } as IPuzzleInput;
-                case "04":
-                    return new PassphrasesInput
-                    {
-                        Passphrases = File.ReadAllLines(GetInputFileName(dayNumber)).Select(passphraseText => passphraseText.Split(' ')),
-                        AreAnagramsAllowed = true
-                    };
-                case "04b":
-                    return new PassphrasesInput
-                    {
-                        Passphrases = File.ReadAllLines(GetInputFileName(dayNumber)).Select(passphraseText => passphraseText.Split(' ')),
-                        AreAnagramsAllowed = false
-                    };
-                case "05":
-                    return new TrampolinesInput
-                    {
-                        Instructions = File.ReadAllLines(GetInputFileName(dayNumber)).Select(instructionText => int.Parse(instructionText)).ToArray(),
-                        DecrementWhenJumpIsThreeOrMore = false
-                    };
-                case "05b":
-                    return new TrampolinesInput
-                    {
-                        Instructions = File.ReadAllLines(GetInputFileName(dayNumber)).Select(instructionText => int.Parse(instructionText)).ToArray(),
-                        DecrementWhenJumpIsThreeOrMore = true
-                    };
-                default:
-                    throw new Exception($"Day '{dayNumber}' is not yet solved.");
-            }
-        }
-
-        private static string GetInputFileName(string dayNumber) => $"day{dayNumber}_input.txt";
+        private static string GetRawInputForDay(string dayNumber) => File.ReadAllText($"day{dayNumber.Substring(0, 2)}_input.txt");
     }
 }

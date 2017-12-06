@@ -2,6 +2,6 @@
 {
     public interface IPuzzleSolver
     {
-        int Solve(IPuzzleInput input);
+        int Solve(string inputText);
     }
 }

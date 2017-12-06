@@ -1,18 +1,14 @@
 ﻿namespace Shared
 {
-    public abstract class PuzzleSolver<T> where T : class, IPuzzleInput
+    public abstract class PuzzleSolver<T> where T : class, IPuzzleInput<T>
     {
-        public T CastInput(IPuzzleInput input)
+        public int Solve(string inputText)
         {
-            return input as T;
+            var input = ParseInput(inputText);
+            return SolveInternal(input);
         }
 
-        public int Solve(IPuzzleInput input)
-        {
-            var castedInput = CastInput(input);
-            return SolveInternal(castedInput);
-        }
-
+        protected abstract T ParseInput(string inputText);
         protected abstract int SolveInternal(T input);
     }
 }
