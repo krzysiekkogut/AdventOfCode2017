@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Day06_MemoryReallocation
 {
-    public class MemoryReallocation : PuzzleSolver<MemoryReallocationInput>, IPuzzleSolver
+    public class MemoryReallocation : PuzzleSolver<MemoryReallocationInput>
     {
         private bool _shouldReturnOnlyCycleLength;
 
@@ -19,7 +19,7 @@ namespace Day06_MemoryReallocation
             return new MemoryReallocationInput().ParseFromText(inputText);
         }
 
-        protected override int SolveInternal(MemoryReallocationInput input)
+        protected override IPuzzleSolution SolveInternal(MemoryReallocationInput input)
         {
             var numberOfBanks = input.Banks.Length;
             var memoryStates = new Dictionary<string, int>();
@@ -44,7 +44,8 @@ namespace Day06_MemoryReallocation
                 currentState = input.ToString();
             }
 
-            return _shouldReturnOnlyCycleLength ? statesCount - memoryStates[currentState] : statesCount;
+            var result = _shouldReturnOnlyCycleLength ? statesCount - memoryStates[currentState] : statesCount;
+            return new MemoryReallocationSolution(result);
         }
     }
 }

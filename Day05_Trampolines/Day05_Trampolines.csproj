@@ -43,6 +43,7 @@
     <Compile Include="Trampolines.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrampolinesInput.cs" />
+    <Compile Include="TrampolinesSolution.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">

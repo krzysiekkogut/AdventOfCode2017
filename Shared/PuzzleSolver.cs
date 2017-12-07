@@ -1,14 +1,15 @@
 ﻿namespace Shared
 {
-    public abstract class PuzzleSolver<T> where T : class, IPuzzleInput<T>
+    public abstract class PuzzleSolver<TIn> : IPuzzleSolver 
+        where TIn : class, IPuzzleInput<TIn>
     {
-        public int Solve(string inputText)
+        public IPuzzleSolution Solve(string inputText)
         {
             var input = ParseInput(inputText);
             return SolveInternal(input);
         }
 
-        protected abstract T ParseInput(string inputText);
-        protected abstract int SolveInternal(T input);
+        protected abstract TIn ParseInput(string inputText);
+        protected abstract IPuzzleSolution SolveInternal(TIn input);
     }
 }

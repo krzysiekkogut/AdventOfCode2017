@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using Day01_Captcha;
 using Day02_Checksum;
 using Day03_SpiralMemory;
@@ -9,6 +8,7 @@ using Day05_Trampolines;
 using Day06_MemoryReallocation;
 using Shared;
 using static System.Console;
+using Day07_RecursiveCircus;
 
 namespace PuzzlesRunner
 {
@@ -28,7 +28,10 @@ namespace PuzzlesRunner
                     }
 
                     var puzzleSolver = GetPuzzleSolver(dayNumber);
-                    WriteLine(puzzleSolver.Solve(GetRawInputForDay(dayNumber)));
+                    WriteLine(
+                        puzzleSolver
+                        .Solve(GetRawInputForDay(dayNumber))
+                        .PrintSolution());
                 }
                 catch (Exception e)
                 {
@@ -69,6 +72,10 @@ namespace PuzzlesRunner
                     return new MemoryReallocation(false);
                 case "06b":
                     return new MemoryReallocation(true);
+                case "07":
+                    return new RecursiveCircus(false);
+                case "07b":
+                    return new RecursiveCircus(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

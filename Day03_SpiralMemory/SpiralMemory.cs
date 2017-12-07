@@ -3,15 +3,16 @@ using Shared;
 
 namespace Day03_SpiralMemory
 {
-    public class SpiralMemory : PuzzleSolver<SpiralMemoryInput>, IPuzzleSolver
+    public class SpiralMemory : PuzzleSolver<SpiralMemoryInput>
     {
         protected override SpiralMemoryInput ParseInput(string inputText)
         {
             return new SpiralMemoryInput().ParseFromText(inputText);
         }
 
-        protected override int SolveInternal(SpiralMemoryInput input)
+        protected override IPuzzleSolution SolveInternal(SpiralMemoryInput input)
         {
+            int result;
             var layerOrder = Convert.ToInt32(Math.Ceiling(Math.Sqrt(input.RegistryNumber)));
             if (layerOrder % 2 == 0)
             {
@@ -29,7 +30,8 @@ namespace Day03_SpiralMemory
             {
                 if (currentRegistryNumber == input.RegistryNumber)
                 {
-                    return CountSteps(xCoordinate, yCoordinate);
+                    result = CountSteps(xCoordinate, yCoordinate);
+                    return new SpiralMemorySolution(result);
                 }
             }
 
@@ -40,7 +42,8 @@ namespace Day03_SpiralMemory
             {
                 if (currentRegistryNumber == input.RegistryNumber)
                 {
-                    return CountSteps(xCoordinate, yCoordinate);
+                    result = CountSteps(xCoordinate, yCoordinate);
+                    return new SpiralMemorySolution(result);
                 }
             }
 
@@ -51,7 +54,8 @@ namespace Day03_SpiralMemory
             {
                 if (currentRegistryNumber == input.RegistryNumber)
                 {
-                    return CountSteps(xCoordinate, yCoordinate);
+                    result = CountSteps(xCoordinate, yCoordinate);
+                    return new SpiralMemorySolution(result);
                 }
             }
 
@@ -62,11 +66,12 @@ namespace Day03_SpiralMemory
             {
                 if (currentRegistryNumber == input.RegistryNumber)
                 {
-                    return CountSteps(xCoordinate, yCoordinate);
+                    result = CountSteps(xCoordinate, yCoordinate);
+                    return new SpiralMemorySolution(result);
                 }
             }
 
-            return numberOfLayers;
+            throw new Exception("Wrong input.");
         }
 
         private int CountSteps(int xCoordinate, int yCoordinate)

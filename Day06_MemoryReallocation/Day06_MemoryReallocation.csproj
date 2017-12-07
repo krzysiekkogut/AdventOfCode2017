@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="MemoryReallocation.cs" />
     <Compile Include="MemoryReallocationInput.cs" />
+    <Compile Include="MemoryReallocationSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

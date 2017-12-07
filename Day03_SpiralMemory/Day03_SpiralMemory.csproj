@@ -44,6 +44,7 @@
     <Compile Include="SpiralMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpiralMemoryInput.cs" />
+    <Compile Include="SpiralMemorySolution.cs" />
     <Compile Include="SpiralMemorySumOfAdjacentRegistries.cs" />
     <Compile Include="SpiralTable.cs" />
   </ItemGroup>

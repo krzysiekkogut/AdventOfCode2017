@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day05_Trampolines", "Day05_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day06_MemoryReallocation", "Day06_MemoryReallocation\Day06_MemoryReallocation.csproj", "{8F2B302A-B63E-457E-B082-3351EA99538C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day07_RecursiveCircus", "Day07_RecursiveCircus\Day07_RecursiveCircus.csproj", "{0567243E-BC43-4DEB-BFA6-AC592CEABB95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{8F2B302A-B63E-457E-B082-3351EA99538C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F2B302A-B63E-457E-B082-3351EA99538C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F2B302A-B63E-457E-B082-3351EA99538C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0567243E-BC43-4DEB-BFA6-AC592CEABB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0567243E-BC43-4DEB-BFA6-AC592CEABB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0567243E-BC43-4DEB-BFA6-AC592CEABB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0567243E-BC43-4DEB-BFA6-AC592CEABB95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -74,6 +74,10 @@
       <Project>{8F2B302A-B63E-457E-B082-3351EA99538C}</Project>
       <Name>Day06_MemoryReallocation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day07_RecursiveCircus\Day07_RecursiveCircus.csproj">
+      <Project>{0567243E-BC43-4DEB-BFA6-AC592CEABB95}</Project>
+      <Name>Day07_RecursiveCircus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

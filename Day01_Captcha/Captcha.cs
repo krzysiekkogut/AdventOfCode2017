@@ -2,7 +2,7 @@
 
 namespace Day01_Captcha
 {
-    public class Captcha : PuzzleSolver<CaptchaInput>, IPuzzleSolver
+    public class Captcha : PuzzleSolver<CaptchaInput>
     {
         private bool _isStepByOne;
 
@@ -16,7 +16,7 @@ namespace Day01_Captcha
             return new CaptchaInput().ParseFromText(inputText);
         }
 
-        protected override int SolveInternal(CaptchaInput input)
+        protected override IPuzzleSolution SolveInternal(CaptchaInput input)
         {
             var result = 0;
             for (var currentPosiion = 0; currentPosiion < input.Text.Length; currentPosiion++)
@@ -30,7 +30,7 @@ namespace Day01_Captcha
                 }
             }
 
-            return result;
+            return new CaptchaSolution(result);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Day05_Trampolines
 {
-    public class Trampolines : PuzzleSolver<TrampolinesInput>, IPuzzleSolver
+    public class Trampolines : PuzzleSolver<TrampolinesInput>
     {
         private bool _decrementWhenJumpIsThreeOrMore;
 
@@ -16,7 +16,7 @@ namespace Day05_Trampolines
             return new TrampolinesInput().ParseFromText(inputText);
         }
 
-        protected override int SolveInternal(TrampolinesInput input)
+        protected override IPuzzleSolution SolveInternal(TrampolinesInput input)
         {
             var countOfSteps = 0;
             var currentIndex = 0;
@@ -30,7 +30,7 @@ namespace Day05_Trampolines
                 countOfSteps++;
             }
 
-            return countOfSteps;
+            return new TrampolinesSolution(countOfSteps);
         }
     }
 }

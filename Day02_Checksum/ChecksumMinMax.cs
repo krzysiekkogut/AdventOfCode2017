@@ -1,21 +1,22 @@
 ﻿using System.Linq;
 using Shared;
 
-namespace Day02_Checksum 
+namespace Day02_Checksum
 {
-    public class ChecksumMinMax : PuzzleSolver<ChecksumInput>, IPuzzleSolver
+    public class ChecksumMinMax : PuzzleSolver<ChecksumInput>
     {
         protected override ChecksumInput ParseInput(string inputText)
         {
             return new ChecksumInput().ParseFromText(inputText);
         }
 
-        protected override int SolveInternal(ChecksumInput input)
+        protected override IPuzzleSolution SolveInternal(ChecksumInput input)
         {
-            return input.Spreadsheet
+            var result = input.Spreadsheet
                 .Select(row => (Max: row.Max(), Min: row.Min()))
                 .Select(rowMinMax => rowMinMax.Max - rowMinMax.Min)
                 .Sum();
+            return new ChecksumSolution(result);
         }
     }
 }

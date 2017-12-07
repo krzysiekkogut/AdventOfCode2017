@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPuzzleInput.cs" />
+    <Compile Include="IPuzzleSolution.cs" />
     <Compile Include="IPuzzleSolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PuzzleSolution.cs" />
     <Compile Include="PuzzleSolver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

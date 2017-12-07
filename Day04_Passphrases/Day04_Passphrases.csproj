@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Passphrases .cs" />
     <Compile Include="PassphrasesInput.cs" />
+    <Compile Include="PassphrasesSolution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
