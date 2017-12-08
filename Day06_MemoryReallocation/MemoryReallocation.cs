@@ -14,11 +14,6 @@ namespace Day06_MemoryReallocation
             _shouldReturnOnlyCycleLength = shouldReturnOnlyCycleLength;
         }
 
-        protected override MemoryReallocationInput ParseInput(string inputText)
-        {
-            return new MemoryReallocationInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(MemoryReallocationInput input)
         {
             var numberOfBanks = input.Banks.Length;

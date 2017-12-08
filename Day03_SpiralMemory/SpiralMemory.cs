@@ -5,11 +5,6 @@ namespace Day03_SpiralMemory
 {
     public class SpiralMemory : PuzzleSolver<SpiralMemoryInput>
     {
-        protected override SpiralMemoryInput ParseInput(string inputText)
-        {
-            return new SpiralMemoryInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(SpiralMemoryInput input)
         {
             int result;

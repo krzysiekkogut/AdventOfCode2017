@@ -16,11 +16,6 @@ namespace Day08_Registers
             _maxDuringProcess = 0;
         }
 
-        protected override RegistersInput ParseInput(string inputText)
-        {
-            return new RegistersInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(RegistersInput input)
         {
             var registers = input.Operations.Select(op => op.RegisterName).Distinct().ToDictionary(reg => reg, reg => 0);

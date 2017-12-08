@@ -13,11 +13,6 @@ namespace Day07_RecursiveCircus
             _showCorrectProgramWeight = showCorrectProgramWeight;
         }
 
-        protected override RecursiveCircusInput ParseInput(string inputText)
-        {
-            return new RecursiveCircusInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(RecursiveCircusInput input)
         {
             var dictOfProgramNodes = BuildGraph(input.Programs);

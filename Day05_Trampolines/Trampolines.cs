@@ -11,11 +11,6 @@ namespace Day05_Trampolines
             _decrementWhenJumpIsThreeOrMore = decrementWhenJumpIsThreeOrMore;
         }
 
-        protected override TrampolinesInput ParseInput(string inputText)
-        {
-            return new TrampolinesInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(TrampolinesInput input)
         {
             var countOfSteps = 0;

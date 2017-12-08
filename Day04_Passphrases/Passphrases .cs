@@ -12,11 +12,6 @@ namespace Day04_Passphrases
             _areAnagramsAllowed = areAnagramsAllowed;
         }
 
-        protected override PassphrasesInput ParseInput(string inputText)
-        {
-            return new PassphrasesInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(PassphrasesInput input)
         {
             var result = input

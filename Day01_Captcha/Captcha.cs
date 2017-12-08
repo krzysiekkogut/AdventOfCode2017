@@ -11,11 +11,6 @@ namespace Day01_Captcha
             _isStepByOne = isStepByOne;
         }
 
-        protected override CaptchaInput ParseInput(string inputText)
-        {
-            return new CaptchaInput().ParseFromText(inputText);
-        }
-
         protected override IPuzzleSolution SolveInternal(CaptchaInput input)
         {
             var result = 0;
