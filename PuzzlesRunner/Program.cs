@@ -9,6 +9,7 @@ using Day06_MemoryReallocation;
 using Shared;
 using static System.Console;
 using Day07_RecursiveCircus;
+using Day08_Registers;
 
 namespace PuzzlesRunner
 {
@@ -76,6 +77,10 @@ namespace PuzzlesRunner
                     return new RecursiveCircus(false);
                 case "07b":
                     return new RecursiveCircus(true);
+                case "08":
+                    return new Registers(false);
+                case "08b":
+                    return new Registers(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
