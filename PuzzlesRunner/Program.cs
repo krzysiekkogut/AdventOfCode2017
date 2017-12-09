@@ -10,6 +10,7 @@ using Shared;
 using static System.Console;
 using Day07_RecursiveCircus;
 using Day08_Registers;
+using Day09_StreamProcessing;
 
 namespace PuzzlesRunner
 {
@@ -81,6 +82,10 @@ namespace PuzzlesRunner
                     return new Registers(false);
                 case "08b":
                     return new Registers(true);
+                case "09":
+                    return new StreamProcessing(false);
+                case "09b":
+                    return new StreamProcessing(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

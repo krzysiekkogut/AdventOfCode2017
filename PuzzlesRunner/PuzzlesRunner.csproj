@@ -82,6 +82,10 @@
       <Project>{C6D63D61-16DC-46DD-B105-5C266AF67440}</Project>
       <Name>Day08_Registers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day09_StreamProcessing\Day09_StreamProcessing.csproj">
+      <Project>{1ABEB8A7-8506-48BF-9A71-942A8F8B8F36}</Project>
+      <Name>Day09_StreamProcessing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
