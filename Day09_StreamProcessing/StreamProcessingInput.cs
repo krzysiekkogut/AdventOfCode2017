@@ -4,7 +4,7 @@ namespace Day09_StreamProcessing
 {
     public class StreamProcessingInput : IPuzzleInput<StreamProcessingInput>
     {
-        public string Stream { get; private set; }
+        public string Stream { get; set; }
 
         public StreamProcessingInput ParseFromText(string textInput)
         {

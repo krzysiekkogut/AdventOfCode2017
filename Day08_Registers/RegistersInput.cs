@@ -8,7 +8,7 @@ namespace Day08_Registers
 {
     public class RegistersInput : IPuzzleInput<RegistersInput>
     {
-        public IList<Operation> Operations{ get; set; }
+        internal IList<Operation> Operations{ get; set; }
         public RegistersInput ParseFromText(string textInput)
         {
             var regex = new Regex(@"(\w+) (inc|dec) (-?\d+) if (\w+) (>=|>|<=|<|==|!=) (-?\d+)");

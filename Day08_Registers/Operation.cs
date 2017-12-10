@@ -1,6 +1,6 @@
 ﻿namespace Day08_Registers
 {
-    public class Operation
+    internal class Operation
     {
         public string RegisterName { get; set; }
         public OperationType OperationType { get; set; }

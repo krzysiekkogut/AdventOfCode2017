@@ -2,7 +2,7 @@
 
 namespace Day08_Registers
 {
-    public class Condition
+    internal class Condition
     {
         public Condition(string comparisonType)
         {

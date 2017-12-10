@@ -1,6 +1,6 @@
 ﻿namespace Day08_Registers
 {
-    public enum ComparisonType
+    internal enum ComparisonType
     {
         LessThan,
         LessThanOrEqualTo,

@@ -6,11 +6,12 @@ using Day03_SpiralMemory;
 using Day04_Passphrases;
 using Day05_Trampolines;
 using Day06_MemoryReallocation;
-using Shared;
-using static System.Console;
 using Day07_RecursiveCircus;
 using Day08_Registers;
 using Day09_StreamProcessing;
+using Shared;
+using static System.Console;
+using Day10_KnotHash;
 
 namespace PuzzlesRunner
 {
@@ -86,6 +87,10 @@ namespace PuzzlesRunner
                     return new StreamProcessing(false);
                 case "09b":
                     return new StreamProcessing(true);
+                case "10":
+                    return new KnotHash(false);
+                case "10b":
+                    return new KnotHash(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

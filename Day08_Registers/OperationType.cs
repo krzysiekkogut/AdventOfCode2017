@@ -1,6 +1,6 @@
 ﻿namespace Day08_Registers
 {
-    public enum OperationType
+    internal enum OperationType
     {
         Increase,
         Decrease

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Day07_RecursiveCircus
 {
-    public class ProgramNode
+    internal class ProgramNode
     {
         public ProgramNode()
         {
