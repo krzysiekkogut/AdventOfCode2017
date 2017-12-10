@@ -9,6 +9,8 @@ namespace Day10_KnotHash
     {
         const int _listLength = 256;
         const int _sparseHashFragmentLength = 16;
+        private int _skipSize = 0;
+        private int _currentPosition = 0;
         private readonly int[] _list;
         private readonly bool _complexHashing;
 
@@ -22,28 +24,25 @@ namespace Day10_KnotHash
 
         protected override IPuzzleSolution SolveInternal(KnotHashInput input)
         {
-            var skipSize = 0;
-            var currentPosition = 0;
-
             var knotLengths = _complexHashing ? input.KnotLengthsFromASCII : input.KnotLengths;
+            PerformKnotHashing(knotLengths);
+            return
+                _complexHashing
+                    ? new ComplexKnotHashSolution(FormatHashToHex(DensifyHash())) as IPuzzleSolution
+                    : new KnotHashSolution(_list[0] * _list[1]) as IPuzzleSolution;
+        }
+
+        private void PerformKnotHashing(IList<int> knotLengths)
+        {
             for (var i = 0; i < NumberOfRounds; i++)
             {
                 foreach (var length in knotLengths)
                 {
-                    ReverseFragment(currentPosition, currentPosition + length - 1);
-                    currentPosition += length + skipSize;
-                    skipSize++;
+                    ReverseFragment(_currentPosition, _currentPosition + length - 1);
+                    _currentPosition += length + _skipSize;
+                    _skipSize++;
                 }
             }
-
-            if (!_complexHashing)
-            {
-                return new KnotHashSolution(_list[0] * _list[1]);
-            }
-
-            var denseHash = DensifyHash();
-            var hexRepresentation = FormatHashToHex(denseHash);
-            return new ComplesKnotHashSolution(hexRepresentation);
         }
 
         private void ReverseFragment(int startPosition, int endPosition)

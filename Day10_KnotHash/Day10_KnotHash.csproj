@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComplesKnotHashSolution.cs" />
+    <Compile Include="ComplexKnotHashSolution.cs" />
     <Compile Include="KnotHash.cs" />
     <Compile Include="KnotHashInput.cs" />
     <Compile Include="KnotHashSolution.cs" />

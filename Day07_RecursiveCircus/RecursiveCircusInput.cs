@@ -8,7 +8,7 @@ namespace Day07_RecursiveCircus
 {
     public class RecursiveCircusInput : IPuzzleInput<RecursiveCircusInput>
     {
-        public IList<ProgramNode> Programs { get; set; }
+        internal IList<ProgramNode> Programs { get; set; }
 
         public RecursiveCircusInput ParseFromText(string textInput)
         {
