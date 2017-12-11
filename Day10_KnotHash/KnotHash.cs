@@ -22,14 +22,14 @@ namespace Day10_KnotHash
 
         private int NumberOfRounds => _complexHashing ? 64 : 1;
 
-        protected override IPuzzleSolution SolveInternal(KnotHashInput input)
+        protected override PuzzleSolution SolveInternal(KnotHashInput input)
         {
             var knotLengths = _complexHashing ? input.KnotLengthsFromASCII : input.KnotLengths;
             PerformKnotHashing(knotLengths);
             return
                 _complexHashing
-                    ? new ComplexKnotHashSolution(FormatHashToHex(DensifyHash())) as IPuzzleSolution
-                    : new KnotHashSolution(_list[0] * _list[1]) as IPuzzleSolution;
+                    ? new ComplexKnotHashSolution(FormatHashToHex(DensifyHash())) as PuzzleSolution
+                    : new KnotHashSolution(_list[0] * _list[1]) as PuzzleSolution;
         }
 
         private void PerformKnotHashing(IList<int> knotLengths)

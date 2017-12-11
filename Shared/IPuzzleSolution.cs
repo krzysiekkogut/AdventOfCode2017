@@ -1,6 +1,6 @@
 ﻿namespace Shared
 {
-    public interface IPuzzleSolution
+    public interface PuzzleSolution
     {
         string PrintSolution();
     }

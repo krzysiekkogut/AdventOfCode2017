@@ -13,7 +13,7 @@ namespace Day07_RecursiveCircus
             _showCorrectProgramWeight = showCorrectProgramWeight;
         }
 
-        protected override IPuzzleSolution SolveInternal(RecursiveCircusInput input)
+        protected override PuzzleSolution SolveInternal(RecursiveCircusInput input)
         {
             var dictOfProgramNodes = BuildGraph(input.Programs);
             var bottomProgramNode = dictOfProgramNodes.Single(node => node.Value.NodeBelow == null).Value;

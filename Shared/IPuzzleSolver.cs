@@ -2,6 +2,6 @@
 {
     public interface IPuzzleSolver
     {
-        IPuzzleSolution Solve(string inputText);
+        PuzzleSolution Solve(string inputText);
     }
 }

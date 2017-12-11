@@ -5,7 +5,7 @@ namespace Shared
     public abstract class PuzzleSolver<TIn> : IPuzzleSolver 
         where TIn : class, IPuzzleInput<TIn>
     {
-        public IPuzzleSolution Solve(string inputText)
+        public PuzzleSolution Solve(string inputText)
         {
             var input = ParseInput(inputText);
             return SolveInternal(input);
@@ -16,6 +16,6 @@ namespace Shared
             return Activator.CreateInstance<TIn>().ParseFromText(inputText);
         }
 
-        protected abstract IPuzzleSolution SolveInternal(TIn input);
+        protected abstract PuzzleSolution SolveInternal(TIn input);
     }
 }

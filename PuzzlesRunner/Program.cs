@@ -12,6 +12,7 @@ using Day09_StreamProcessing;
 using Shared;
 using static System.Console;
 using Day10_KnotHash;
+using Day11_HexGrid;
 
 namespace PuzzlesRunner
 {
@@ -91,6 +92,10 @@ namespace PuzzlesRunner
                     return new KnotHash(false);
                 case "10b":
                     return new KnotHash(true);
+                case "11":
+                    return new HexGrid(false);
+                case "11b":
+                    return new HexGrid(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

@@ -11,7 +11,7 @@ namespace Day05_Trampolines
             _decrementWhenJumpIsThreeOrMore = decrementWhenJumpIsThreeOrMore;
         }
 
-        protected override IPuzzleSolution SolveInternal(TrampolinesInput input)
+        protected override PuzzleSolution SolveInternal(TrampolinesInput input)
         {
             var countOfSteps = 0;
             var currentIndex = 0;

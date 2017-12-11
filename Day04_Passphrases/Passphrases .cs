@@ -12,7 +12,7 @@ namespace Day04_Passphrases
             _areAnagramsAllowed = areAnagramsAllowed;
         }
 
-        protected override IPuzzleSolution SolveInternal(PassphrasesInput input)
+        protected override PuzzleSolution SolveInternal(PassphrasesInput input)
         {
             var result = input
                 .Passphrases

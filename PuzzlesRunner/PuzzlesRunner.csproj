@@ -90,6 +90,10 @@
       <Project>{0B89D5AE-F943-4659-A67B-4C948E1BB4C7}</Project>
       <Name>Day10_KnotHash</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day11_HexGrid\Day11_HexGrid.csproj">
+      <Project>{468B239B-3696-4AF9-ABA3-159DAACC9B19}</Project>
+      <Name>Day11_HexGrid</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

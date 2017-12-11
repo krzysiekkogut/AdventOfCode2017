@@ -5,7 +5,7 @@ namespace Day02_Checksum
 {
     public class ChecksumMinMax : PuzzleSolver<ChecksumInput>
     {
-        protected override IPuzzleSolution SolveInternal(ChecksumInput input)
+        protected override PuzzleSolution SolveInternal(ChecksumInput input)
         {
             var result = input.Spreadsheet
                 .Select(row => (Max: row.Max(), Min: row.Min()))

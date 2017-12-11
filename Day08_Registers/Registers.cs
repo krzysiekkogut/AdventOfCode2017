@@ -16,7 +16,7 @@ namespace Day08_Registers
             _maxDuringProcess = 0;
         }
 
-        protected override IPuzzleSolution SolveInternal(RegistersInput input)
+        protected override PuzzleSolution SolveInternal(RegistersInput input)
         {
             var registers = input.Operations.Select(op => op.RegisterName).Distinct().ToDictionary(reg => reg, reg => 0);
             foreach (var operation in input.Operations)

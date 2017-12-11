@@ -14,7 +14,7 @@ namespace Day06_MemoryReallocation
             _shouldReturnOnlyCycleLength = shouldReturnOnlyCycleLength;
         }
 
-        protected override IPuzzleSolution SolveInternal(MemoryReallocationInput input)
+        protected override PuzzleSolution SolveInternal(MemoryReallocationInput input)
         {
             var numberOfBanks = input.Banks.Length;
             var memoryStates = new Dictionary<string, int>();
