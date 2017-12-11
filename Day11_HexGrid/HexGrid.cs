@@ -29,7 +29,7 @@ namespace Day11_HexGrid
             var maxDistance = 0;
             var distanceToStart = 0;
 
-            var dict = input.Steps.Distinct().ToDictionary(step => step, step => input.Steps.Count(s=>s==step));
+            var dict = input.Steps.Distinct().ToDictionary(step => step, step => input.Steps.Count(s => s == step));
 
             foreach (var step in input.Steps)
             {
