@@ -9,10 +9,10 @@ using Day06_MemoryReallocation;
 using Day07_RecursiveCircus;
 using Day08_Registers;
 using Day09_StreamProcessing;
-using Shared;
-using static System.Console;
 using Day10_KnotHash;
 using Day11_HexGrid;
+using Shared;
+using static System.Console;
 
 namespace PuzzlesRunner
 {
