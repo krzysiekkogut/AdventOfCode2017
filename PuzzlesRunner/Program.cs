@@ -86,9 +86,9 @@ namespace PuzzlesRunner
                 case "11b":
                     return new Day11_HexGrid.HexGrid(true);
                 case "12":
-                    return new Day12_DigitalPlumber.DigitalPlumber();
+                    return new Day12_DigitalPlumber.DigitalPlumber(false);
                 case "12b":
-                    return new Day12_DigitalPlumber.DigitalPlumberGroupsCounter();
+                    return new Day12_DigitalPlumber.DigitalPlumber(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

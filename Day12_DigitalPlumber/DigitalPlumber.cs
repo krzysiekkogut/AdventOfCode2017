@@ -6,32 +6,47 @@ namespace Day12_DigitalPlumber
 {
     public class DigitalPlumber : PuzzleSolver<DigitalPlumberInput>
     {
+        private readonly bool _showNumberOfGroups;
+
+        public DigitalPlumber(bool showNumberOfGroups)
+        {
+            _showNumberOfGroups = showNumberOfGroups;
+        }
+
         protected override PuzzleSolution SolveInternal(DigitalPlumberInput input)
         {
             var graph = input
                 .ProgramsCommunication
                 .ToDictionary(p => p.ProgramId, p => p);
 
-            var queue = new Queue<int>();
-            queue.Enqueue(0);
-            var processedPrograms = new HashSet<int>();
-
-            while (queue.Any())
+            var currentGroupNumber = 0;
+            while (graph.Any(p => p.Value.GroupId < 0))
             {
-                var processedProgram = queue.Dequeue();
-                if (processedPrograms.Add(processedProgram))
+                var nodeToStart = graph.First(p => p.Value.GroupId < 0);
+                var queue = new Queue<int>();
+                var processedPrograms = new HashSet<int>();
+                queue.Enqueue(nodeToStart.Key);
+
+                while (queue.Any())
                 {
-                    foreach (var programId in graph[processedProgram].ProgramReferences)
+                    var processedProgram = queue.Dequeue();
+                    if (processedPrograms.Add(processedProgram))
                     {
-                        if (!processedPrograms.Contains(programId))
+                        graph[processedProgram].GroupId = currentGroupNumber;
+                        foreach (var programId in graph[processedProgram].ProgramReferences)
                         {
-                            queue.Enqueue(programId);
+                            if (!processedPrograms.Contains(programId))
+                            {
+                                queue.Enqueue(programId);
+                            }
                         }
                     }
                 }
+
+                currentGroupNumber++;
             }
 
-            return new DigitalPlumberSolution(processedPrograms.Count);
+            return new DigitalPlumberSolution(_showNumberOfGroups ? currentGroupNumber : graph.Count(p => p.Value.GroupId == graph[0].GroupId));
         }
     }
 }

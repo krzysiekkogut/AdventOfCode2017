@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DigitalPlumber.cs" />
-    <Compile Include="DigitalPlumberGroupsCounter.cs" />
     <Compile Include="DigitalPlumberInput.cs" />
     <Compile Include="DigitalPlumberSolution.cs" />
     <Compile Include="ProgramCommunication.cs" />
