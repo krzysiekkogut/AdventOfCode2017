@@ -1,16 +1,5 @@
 ﻿using System;
 using System.IO;
-using Day01_Captcha;
-using Day02_Checksum;
-using Day03_SpiralMemory;
-using Day04_Passphrases;
-using Day05_Trampolines;
-using Day06_MemoryReallocation;
-using Day07_RecursiveCircus;
-using Day08_Registers;
-using Day09_StreamProcessing;
-using Day10_KnotHash;
-using Day11_HexGrid;
 using Shared;
 using static System.Console;
 
@@ -53,49 +42,53 @@ namespace PuzzlesRunner
             switch (dayNumber)
             {
                 case "01":
-                    return new Captcha(true);
+                    return new Day01_Captcha.Captcha(true);
                 case "01b":
-                    return new Captcha(false);
+                    return new Day01_Captcha.Captcha(false);
                 case "02":
-                    return new ChecksumMinMax();
+                    return new Day02_Checksum.ChecksumMinMax();
                 case "02b":
-                    return new CheckSumEvenlyDivisible();
+                    return new Day02_Checksum.CheckSumEvenlyDivisible();
                 case "03":
-                    return new SpiralMemory();
+                    return new Day03_SpiralMemory.SpiralMemory();
                 case "03b":
-                    return new SpiralMemorySumOfAdjacentRegistries();
+                    return new Day03_SpiralMemory.SpiralMemorySumOfAdjacentRegistries();
                 case "04":
-                    return new Passphrases(true);
+                    return new Day04_Passphrases.Passphrases(true);
                 case "04b":
-                    return new Passphrases(false);
+                    return new Day04_Passphrases.Passphrases(false);
                 case "05":
-                    return new Trampolines(false);
+                    return new Day05_Trampolines.Trampolines(false);
                 case "05b":
-                    return new Trampolines(true);
+                    return new Day05_Trampolines.Trampolines(true);
                 case "06":
-                    return new MemoryReallocation(false);
+                    return new Day06_MemoryReallocation.MemoryReallocation(false);
                 case "06b":
-                    return new MemoryReallocation(true);
+                    return new Day06_MemoryReallocation.MemoryReallocation(true);
                 case "07":
-                    return new RecursiveCircus(false);
+                    return new Day07_RecursiveCircus.RecursiveCircus(false);
                 case "07b":
-                    return new RecursiveCircus(true);
+                    return new Day07_RecursiveCircus.RecursiveCircus(true);
                 case "08":
-                    return new Registers(false);
+                    return new Day08_Registers.Registers(false);
                 case "08b":
-                    return new Registers(true);
+                    return new Day08_Registers.Registers(true);
                 case "09":
-                    return new StreamProcessing(false);
+                    return new Day09_StreamProcessing.StreamProcessing(false);
                 case "09b":
-                    return new StreamProcessing(true);
+                    return new Day09_StreamProcessing.StreamProcessing(true);
                 case "10":
-                    return new KnotHash(false);
+                    return new Day10_KnotHash.KnotHash(false);
                 case "10b":
-                    return new KnotHash(true);
+                    return new Day10_KnotHash.KnotHash(true);
                 case "11":
-                    return new HexGrid(false);
+                    return new Day11_HexGrid.HexGrid(false);
                 case "11b":
-                    return new HexGrid(true);
+                    return new Day11_HexGrid.HexGrid(true);
+                case "12":
+                    return new Day12_DigitalPlumber.DigitalPlumber();
+                case "12b":
+                    return new Day12_DigitalPlumber.DigitalPlumberGroupsCounter();
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
