@@ -93,6 +93,10 @@ namespace PuzzlesRunner
                     return new Day13_PacketScanners.PacketScanners(false);
                 case "13b":
                     return new Day13_PacketScanners.PacketScanners(true);
+                case "14":
+                    return new Day14_DiskDefragmentation.DiskDefragmentation(false);
+                case "14b":
+                    return new Day14_DiskDefragmentation.DiskDefragmentation(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

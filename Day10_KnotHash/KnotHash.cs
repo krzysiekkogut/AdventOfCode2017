@@ -1,7 +1,7 @@
 ﻿using Shared;
 using System.Linq;
-using System;
 using System.Collections.Generic;
+using System;
 
 namespace Day10_KnotHash
 {
@@ -67,7 +67,7 @@ namespace Day10_KnotHash
 
         private string FormatHashToHex(IEnumerable<int> denseHash)
         {
-            return string.Concat(denseHash.Select(x => x.ToString("x2")));
+            return string.Concat(denseHash.Select(x => Convert.ToString(x, 16).PadLeft(2, '0')));
         }
     }
 }

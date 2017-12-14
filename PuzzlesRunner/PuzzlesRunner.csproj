@@ -102,6 +102,10 @@
       <Project>{bd52f893-f417-4279-81a6-a666e8f59181}</Project>
       <Name>Day13_PacketScanners</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day14_DiskDefragmentation\Day14_DiskDefragmentation.csproj">
+      <Project>{387bb606-ca70-4530-a7a9-ce2a751c6915}</Project>
+      <Name>Day14_DiskDefragmentation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

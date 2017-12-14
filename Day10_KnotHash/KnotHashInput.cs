@@ -22,7 +22,11 @@ namespace Day10_KnotHash
             KnotLengths =
                 textInput
                 .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(lengthText => int.Parse(lengthText))
+                .Select(lengthText =>
+                {
+                    int.TryParse(lengthText, out int knotLength);
+                    return knotLength;
+                })
                 .ToList();
             return this;
         }
