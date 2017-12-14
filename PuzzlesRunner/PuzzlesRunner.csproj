@@ -98,6 +98,10 @@
       <Project>{468B239B-3696-4AF9-ABA3-159DAACC9B19}</Project>
       <Name>Day11_HexGrid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day13_PacketScanners\Day13_PacketScanners.csproj">
+      <Project>{bd52f893-f417-4279-81a6-a666e8f59181}</Project>
+      <Name>Day13_PacketScanners</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

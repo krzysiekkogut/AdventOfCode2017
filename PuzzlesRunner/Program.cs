@@ -89,6 +89,10 @@ namespace PuzzlesRunner
                     return new Day12_DigitalPlumber.DigitalPlumber(false);
                 case "12b":
                     return new Day12_DigitalPlumber.DigitalPlumber(true);
+                case "13":
+                    return new Day13_PacketScanners.PacketScanners(false);
+                case "13b":
+                    return new Day13_PacketScanners.PacketScanners(true);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
