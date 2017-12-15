@@ -97,6 +97,8 @@ namespace PuzzlesRunner
                     return new Day14_DiskDefragmentation.DiskDefragmentation(false);
                 case "14b":
                     return new Day14_DiskDefragmentation.DiskDefragmentation(true);
+                case "15":
+                    return new Day15_DuelingGenerators.DuelingGenerators();
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");

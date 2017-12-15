@@ -106,6 +106,10 @@
       <Project>{387bb606-ca70-4530-a7a9-ce2a751c6915}</Project>
       <Name>Day14_DiskDefragmentation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day15_DuelingGenerators\Day15_DuelingGenerators.csproj">
+      <Project>{f6f5dc84-6d87-450f-abcc-d6b9780646a1}</Project>
+      <Name>Day15_DuelingGenerators</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
