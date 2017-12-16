@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Shared;
 using static System.Console;
@@ -7,11 +8,47 @@ namespace PuzzlesRunner
 {
     class Program
     {
+        private static readonly IDictionary<string, IPuzzleSolver> _solversDictionary = new Dictionary<string, IPuzzleSolver>
+        {
+            ["01"] = new Day01_Captcha.Captcha(true),
+            ["01b"] = new Day01_Captcha.Captcha(false),
+            ["02"] = new Day02_Checksum.ChecksumMinMax(),
+            ["02b"] = new Day02_Checksum.CheckSumEvenlyDivisible(),
+            ["03"] = new Day03_SpiralMemory.SpiralMemory(),
+            ["03b"] = new Day03_SpiralMemory.SpiralMemorySumOfAdjacentRegistries(),
+            ["04"] = new Day04_Passphrases.Passphrases(true),
+            ["04b"] = new Day04_Passphrases.Passphrases(false),
+            ["05"] = new Day05_Trampolines.Trampolines(false),
+            ["05b"] = new Day05_Trampolines.Trampolines(true),
+            ["06"] = new Day06_MemoryReallocation.MemoryReallocation(false),
+            ["06b"] = new Day06_MemoryReallocation.MemoryReallocation(true),
+            ["07"] = new Day07_RecursiveCircus.RecursiveCircus(false),
+            ["07b"] = new Day07_RecursiveCircus.RecursiveCircus(true),
+            ["08"] = new Day08_Registers.Registers(false),
+            ["08b"] = new Day08_Registers.Registers(true),
+            ["09"] = new Day09_StreamProcessing.StreamProcessing(false),
+            ["09b"] = new Day09_StreamProcessing.StreamProcessing(true),
+            ["10"] = new Day10_KnotHash.KnotHash(false),
+            ["10b"] = new Day10_KnotHash.KnotHash(true),
+            ["11"] = new Day11_HexGrid.HexGrid(false),
+            ["11b"] = new Day11_HexGrid.HexGrid(true),
+            ["12"] = new Day12_DigitalPlumber.DigitalPlumber(false),
+            ["12b"] = new Day12_DigitalPlumber.DigitalPlumber(true),
+            ["13"] = new Day13_PacketScanners.PacketScanners(false),
+            ["13b"] = new Day13_PacketScanners.PacketScanners(true),
+            ["14"] = new Day14_DiskDefragmentation.DiskDefragmentation(false),
+            ["14b"] = new Day14_DiskDefragmentation.DiskDefragmentation(true),
+            ["15"] = new Day15_DuelingGenerators.DuelingGenerators(false),
+            ["15b"] = new Day15_DuelingGenerators.DuelingGenerators(true),
+            ["16"] = new Day16_PermutationPromenade.PermutationPromenade(true),
+            ["16b"] = new Day16_PermutationPromenade.PermutationPromenade(false),
+        };
+
         static void Main()
         {
             while (true)
             {
-                WriteLine("Type puzzle number or 'exit':");
+                WriteLine("Type puzzle number, 'all' or 'exit':");
                 try
                 {
                     var dayNumber = ReadLine();
@@ -20,11 +57,24 @@ namespace PuzzlesRunner
                         return;
                     }
 
-                    var puzzleSolver = GetPuzzleSolver(dayNumber);
-                    WriteLine(
-                        puzzleSolver
-                        .Solve(GetRawInputForDay(dayNumber))
-                        .PrintSolution());
+                    WriteLine($"Puzzle    Time [ms]    Solution");
+
+                    if (dayNumber.Equals("all", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var startTime = DateTime.Now;
+
+                        foreach (var day in _solversDictionary.Keys)
+                        {
+                            SolvePuzzle(day);
+                        }
+
+                        var duration = DateTime.Now - startTime;
+                        WriteLine($"All puzzles solved in {duration.TotalMilliseconds}.");
+                    }
+                    else
+                    {
+                        SolvePuzzle(dayNumber);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -37,80 +87,36 @@ namespace PuzzlesRunner
             }
         }
 
+        private static void SolvePuzzle(string dayNumber)
+        {
+            var puzzleSolver = GetPuzzleSolver(dayNumber);
+            var rawInputText = GetRawInputForDay(dayNumber);
+
+            var startTime = DateTime.Now;
+            var solution = puzzleSolver.Solve(rawInputText).PrintSolution();
+            var duration = DateTime.Now - startTime;
+
+            WriteLine(
+                string.Join(
+                    "    ",
+                    dayNumber.PadLeft(6),
+                    duration.TotalMilliseconds.ToString("F2").PadLeft(9),
+                    solution));
+        }
+
         private static IPuzzleSolver GetPuzzleSolver(string dayNumber)
         {
-            switch (dayNumber)
+            if (_solversDictionary.TryGetValue(dayNumber, out IPuzzleSolver solver))
             {
-                case "01":
-                    return new Day01_Captcha.Captcha(true);
-                case "01b":
-                    return new Day01_Captcha.Captcha(false);
-                case "02":
-                    return new Day02_Checksum.ChecksumMinMax();
-                case "02b":
-                    return new Day02_Checksum.CheckSumEvenlyDivisible();
-                case "03":
-                    return new Day03_SpiralMemory.SpiralMemory();
-                case "03b":
-                    return new Day03_SpiralMemory.SpiralMemorySumOfAdjacentRegistries();
-                case "04":
-                    return new Day04_Passphrases.Passphrases(true);
-                case "04b":
-                    return new Day04_Passphrases.Passphrases(false);
-                case "05":
-                    return new Day05_Trampolines.Trampolines(false);
-                case "05b":
-                    return new Day05_Trampolines.Trampolines(true);
-                case "06":
-                    return new Day06_MemoryReallocation.MemoryReallocation(false);
-                case "06b":
-                    return new Day06_MemoryReallocation.MemoryReallocation(true);
-                case "07":
-                    return new Day07_RecursiveCircus.RecursiveCircus(false);
-                case "07b":
-                    return new Day07_RecursiveCircus.RecursiveCircus(true);
-                case "08":
-                    return new Day08_Registers.Registers(false);
-                case "08b":
-                    return new Day08_Registers.Registers(true);
-                case "09":
-                    return new Day09_StreamProcessing.StreamProcessing(false);
-                case "09b":
-                    return new Day09_StreamProcessing.StreamProcessing(true);
-                case "10":
-                    return new Day10_KnotHash.KnotHash(false);
-                case "10b":
-                    return new Day10_KnotHash.KnotHash(true);
-                case "11":
-                    return new Day11_HexGrid.HexGrid(false);
-                case "11b":
-                    return new Day11_HexGrid.HexGrid(true);
-                case "12":
-                    return new Day12_DigitalPlumber.DigitalPlumber(false);
-                case "12b":
-                    return new Day12_DigitalPlumber.DigitalPlumber(true);
-                case "13":
-                    return new Day13_PacketScanners.PacketScanners(false);
-                case "13b":
-                    return new Day13_PacketScanners.PacketScanners(true);
-                case "14":
-                    return new Day14_DiskDefragmentation.DiskDefragmentation(false);
-                case "14b":
-                    return new Day14_DiskDefragmentation.DiskDefragmentation(true);
-                case "15":
-                    return new Day15_DuelingGenerators.DuelingGenerators(false);
-                case "15b":
-                    return new Day15_DuelingGenerators.DuelingGenerators(true);
-                case "16":
-                    return new Day16_PermutationPromenade.PermutationPromenade(true);
-                case "16b":
-                    return new Day16_PermutationPromenade.PermutationPromenade(false);
-                default:
-                    WriteLine($"Day '{dayNumber}' is not yet solved.");
-                    throw new Exception($"Day '{dayNumber}' is not yet solved.");
+                return solver;
+            }
+            else
+            {
+                throw new Exception($"Day '{dayNumber}' is not yet solved.");
             }
         }
 
-        private static string GetRawInputForDay(string dayNumber) => File.ReadAllText($"day{dayNumber.Substring(0, 2)}_input.txt");
+        private static string GetRawInputForDay(string dayNumber) 
+            => File.ReadAllText($"day{dayNumber.Substring(0, 2)}_input.txt");
     }
 }
