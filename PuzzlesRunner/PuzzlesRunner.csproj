@@ -110,6 +110,10 @@
       <Project>{f6f5dc84-6d87-450f-abcc-d6b9780646a1}</Project>
       <Name>Day15_DuelingGenerators</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day16_PermutationPromenade\Day16_PermutationPromenade.csproj">
+      <Project>{11a628d5-ed6e-4c30-a1d5-d8ab32de448d}</Project>
+      <Name>Day16_PermutationPromenade</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

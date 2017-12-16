@@ -101,6 +101,10 @@ namespace PuzzlesRunner
                     return new Day15_DuelingGenerators.DuelingGenerators(false);
                 case "15b":
                     return new Day15_DuelingGenerators.DuelingGenerators(true);
+                case "16":
+                    return new Day16_PermutationPromenade.PermutationPromenade(true);
+                case "16b":
+                    return new Day16_PermutationPromenade.PermutationPromenade(false);
                 default:
                     WriteLine($"Day '{dayNumber}' is not yet solved.");
                     throw new Exception($"Day '{dayNumber}' is not yet solved.");
