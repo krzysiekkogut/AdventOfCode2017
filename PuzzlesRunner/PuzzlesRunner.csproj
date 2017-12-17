@@ -114,6 +114,10 @@
       <Project>{11a628d5-ed6e-4c30-a1d5-d8ab32de448d}</Project>
       <Name>Day16_PermutationPromenade</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day17_Spinlock\Day17_Spinlock.csproj">
+      <Project>{b3ea2bbd-1e11-4844-9937-885bea1df31d}</Project>
+      <Name>Day17_Spinlock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
