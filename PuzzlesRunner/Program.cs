@@ -91,7 +91,9 @@ namespace PuzzlesRunner
                 ["16"] = new Day16_PermutationPromenade.PermutationPromenade(true),
                 ["16b"] = new Day16_PermutationPromenade.PermutationPromenade(false),
                 ["17"] = new Day17_Spinlock.Spinlock(false),
-                ["17b"] = new Day17_Spinlock.Spinlock(true)
+                ["17b"] = new Day17_Spinlock.Spinlock(true),
+                ["18"] = new Day18_Duet.Duet(false),
+                ["18b"] = new Day18_Duet.Duet(true)
             };
         }
 

@@ -118,6 +118,10 @@
       <Project>{b3ea2bbd-1e11-4844-9937-885bea1df31d}</Project>
       <Name>Day17_Spinlock</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day18_Duet\Day18_Duet.csproj">
+      <Project>{de9c319d-72d0-47bc-8856-ef353200be54}</Project>
+      <Name>Day18_Duet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
