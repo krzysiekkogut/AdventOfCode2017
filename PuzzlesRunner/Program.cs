@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Shared;
 using static System.Console;
 
@@ -8,13 +9,55 @@ namespace PuzzlesRunner
 {
     class Program
     {
-        private static IDictionary<string, IPuzzleSolver> _solversDictionary;
+        private static IDictionary<string, (Type solverType, object[] args)> _solversDictionary;
+
+        static Program()
+        {
+            _solversDictionary = new Dictionary<string, (Type solverType, object[] args)>
+            {
+                ["01"] = (typeof(Day01_Captcha.Captcha), new object[] { true }),
+                ["01b"] = (typeof(Day01_Captcha.Captcha), new object[] { false }),
+                ["02"] = (typeof(Day02_Checksum.ChecksumMinMax), new object[] { }),
+                ["02b"] = (typeof(Day02_Checksum.CheckSumEvenlyDivisible), new object[] { }),
+                ["03"] = (typeof(Day03_SpiralMemory.SpiralMemory), new object[] { }),
+                ["03b"] = (typeof(Day03_SpiralMemory.SpiralMemorySumOfAdjacentRegistries), new object[] { }),
+                ["04"] = (typeof(Day04_Passphrases.Passphrases), new object[] { true }),
+                ["04b"] = (typeof(Day04_Passphrases.Passphrases), new object[] { false }),
+                ["05"] = (typeof(Day05_Trampolines.Trampolines), new object[] { false }),
+                ["05b"] = (typeof(Day05_Trampolines.Trampolines), new object[] { true }),
+                ["06"] = (typeof(Day06_MemoryReallocation.MemoryReallocation), new object[] { false }),
+                ["06b"] = (typeof(Day06_MemoryReallocation.MemoryReallocation), new object[] { true }),
+                ["07"] = (typeof(Day07_RecursiveCircus.RecursiveCircus), new object[] { false }),
+                ["07b"] = (typeof(Day07_RecursiveCircus.RecursiveCircus), new object[] { true }),
+                ["08"] = (typeof(Day08_Registers.Registers), new object[] { false }),
+                ["08b"] = (typeof(Day08_Registers.Registers), new object[] { true }),
+                ["09"] = (typeof(Day09_StreamProcessing.StreamProcessing), new object[] { false }),
+                ["09b"] = (typeof(Day09_StreamProcessing.StreamProcessing), new object[] { true }),
+                ["10"] = (typeof(Day10_KnotHash.KnotHash), new object[] { false }),
+                ["10b"] = (typeof(Day10_KnotHash.KnotHash), new object[] { true }),
+                ["11"] = (typeof(Day11_HexGrid.HexGrid), new object[] { false }),
+                ["11b"] = (typeof(Day11_HexGrid.HexGrid), new object[] { true }),
+                ["12"] = (typeof(Day12_DigitalPlumber.DigitalPlumber), new object[] { false }),
+                ["12b"] = (typeof(Day12_DigitalPlumber.DigitalPlumber), new object[] { true }),
+                ["13"] = (typeof(Day13_PacketScanners.PacketScanners), new object[] { false }),
+                ["13b"] = (typeof(Day13_PacketScanners.PacketScanners), new object[] { true }),
+                ["14"] = (typeof(Day14_DiskDefragmentation.DiskDefragmentation), new object[] { false }),
+                ["14b"] = (typeof(Day14_DiskDefragmentation.DiskDefragmentation), new object[] { true }),
+                ["15"] = (typeof(Day15_DuelingGenerators.DuelingGenerators), new object[] { false }),
+                ["15b"] = (typeof(Day15_DuelingGenerators.DuelingGenerators), new object[] { true }),
+                ["16"] = (typeof(Day16_PermutationPromenade.PermutationPromenade), new object[] { true }),
+                ["16b"] = (typeof(Day16_PermutationPromenade.PermutationPromenade), new object[] { false }),
+                ["17"] = (typeof(Day17_Spinlock.Spinlock), new object[] { false }),
+                ["17b"] = (typeof(Day17_Spinlock.Spinlock), new object[] { true }),
+                ["18"] = (typeof(Day18_Duet.Duet), new object[] { false }),
+                ["18b"] = (typeof(Day18_Duet.Duet), new object[] { true })
+            };
+        }
 
         static void Main()
         {
             while (true)
             {
-                ClearSolvers();
                 WriteLine("Type puzzle number, 'all' or 'exit':");
                 try
                 {
@@ -54,49 +97,6 @@ namespace PuzzlesRunner
             }
         }
 
-        private static void ClearSolvers()
-        {
-            _solversDictionary = new Dictionary<string, IPuzzleSolver>
-            {
-                ["01"] = new Day01_Captcha.Captcha(true),
-                ["01b"] = new Day01_Captcha.Captcha(false),
-                ["02"] = new Day02_Checksum.ChecksumMinMax(),
-                ["02b"] = new Day02_Checksum.CheckSumEvenlyDivisible(),
-                ["03"] = new Day03_SpiralMemory.SpiralMemory(),
-                ["03b"] = new Day03_SpiralMemory.SpiralMemorySumOfAdjacentRegistries(),
-                ["04"] = new Day04_Passphrases.Passphrases(true),
-                ["04b"] = new Day04_Passphrases.Passphrases(false),
-                ["05"] = new Day05_Trampolines.Trampolines(false),
-                ["05b"] = new Day05_Trampolines.Trampolines(true),
-                ["06"] = new Day06_MemoryReallocation.MemoryReallocation(false),
-                ["06b"] = new Day06_MemoryReallocation.MemoryReallocation(true),
-                ["07"] = new Day07_RecursiveCircus.RecursiveCircus(false),
-                ["07b"] = new Day07_RecursiveCircus.RecursiveCircus(true),
-                ["08"] = new Day08_Registers.Registers(false),
-                ["08b"] = new Day08_Registers.Registers(true),
-                ["09"] = new Day09_StreamProcessing.StreamProcessing(false),
-                ["09b"] = new Day09_StreamProcessing.StreamProcessing(true),
-                ["10"] = new Day10_KnotHash.KnotHash(false),
-                ["10b"] = new Day10_KnotHash.KnotHash(true),
-                ["11"] = new Day11_HexGrid.HexGrid(false),
-                ["11b"] = new Day11_HexGrid.HexGrid(true),
-                ["12"] = new Day12_DigitalPlumber.DigitalPlumber(false),
-                ["12b"] = new Day12_DigitalPlumber.DigitalPlumber(true),
-                ["13"] = new Day13_PacketScanners.PacketScanners(false),
-                ["13b"] = new Day13_PacketScanners.PacketScanners(true),
-                ["14"] = new Day14_DiskDefragmentation.DiskDefragmentation(false),
-                ["14b"] = new Day14_DiskDefragmentation.DiskDefragmentation(true),
-                ["15"] = new Day15_DuelingGenerators.DuelingGenerators(false),
-                ["15b"] = new Day15_DuelingGenerators.DuelingGenerators(true),
-                ["16"] = new Day16_PermutationPromenade.PermutationPromenade(true),
-                ["16b"] = new Day16_PermutationPromenade.PermutationPromenade(false),
-                ["17"] = new Day17_Spinlock.Spinlock(false),
-                ["17b"] = new Day17_Spinlock.Spinlock(true),
-                ["18"] = new Day18_Duet.Duet(false),
-                ["18b"] = new Day18_Duet.Duet(true)
-            };
-        }
-
         private static void SolvePuzzle(string dayNumber)
         {
             var puzzleSolver = GetPuzzleSolver(dayNumber);
@@ -116,9 +116,9 @@ namespace PuzzlesRunner
 
         private static IPuzzleSolver GetPuzzleSolver(string dayNumber)
         {
-            if (_solversDictionary.TryGetValue(dayNumber, out IPuzzleSolver solver))
+            if (_solversDictionary.TryGetValue(dayNumber, out var solverDefinition))
             {
-                return solver;
+                return Activator.CreateInstance(solverDefinition.solverType, BindingFlags.CreateInstance, null, solverDefinition.args, null) as IPuzzleSolver;
             }
             else
             {
