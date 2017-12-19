@@ -14,7 +14,7 @@ namespace Day17_Spinlock
             _numberOfValues = complexSpinlock ? 50_000_000 : 2017;
         }
 
-        protected override PuzzleSolution SolveInternal(SpinlockInput input)
+        protected override IPuzzleSolution SolveInternal(SpinlockInput input)
         {
             return new SpinlockSolution(_complexSpinlock ? FindValueOnSecondPosition(input.Step) : FindValueAfterLastAdded(input.Step));
         }

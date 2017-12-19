@@ -20,7 +20,7 @@ namespace Day14_DiskDefragmentation
             _countRegions = countRegions;
         }
 
-        protected override PuzzleSolution SolveInternal(DiskDefragmentationInput input)
+        protected override IPuzzleSolution SolveInternal(DiskDefragmentationInput input)
         {
             for (var i = 0; i < GridSize; i++)
             {

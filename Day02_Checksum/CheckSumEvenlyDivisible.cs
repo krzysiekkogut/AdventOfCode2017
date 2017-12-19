@@ -6,7 +6,7 @@ namespace Day02_Checksum
 {
     public class CheckSumEvenlyDivisible : PuzzleSolver<ChecksumInput>
     {
-        protected override PuzzleSolution SolveInternal(ChecksumInput input)
+        protected override IPuzzleSolution SolveInternal(ChecksumInput input)
         {
             var result = input.Spreadsheet
                 .Select(row =>

@@ -24,7 +24,7 @@ namespace Day11_HexGrid
             };
         }
 
-        protected override PuzzleSolution SolveInternal(HexGridInput input)
+        protected override IPuzzleSolution SolveInternal(HexGridInput input)
         {
             var maxDistance = 0;
             var distanceToStart = 0;

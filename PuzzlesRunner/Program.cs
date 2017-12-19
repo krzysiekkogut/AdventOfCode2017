@@ -50,7 +50,9 @@ namespace PuzzlesRunner
                 ["17"] = (typeof(Day17_Spinlock.Spinlock), new object[] { false }),
                 ["17b"] = (typeof(Day17_Spinlock.Spinlock), new object[] { true }),
                 ["18"] = (typeof(Day18_Duet.Duet), new object[] { false }),
-                ["18b"] = (typeof(Day18_Duet.Duet), new object[] { true })
+                ["18b"] = (typeof(Day18_Duet.Duet), new object[] { true }),
+                ["19"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { true }),
+                ["19b"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { false })
             };
         }
 

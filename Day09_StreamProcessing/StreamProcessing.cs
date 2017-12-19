@@ -13,7 +13,7 @@ namespace Day09_StreamProcessing
             _countGarbageCharacters = countGarbageCharacters;
         }
 
-        protected override PuzzleSolution SolveInternal(StreamProcessingInput input)
+        protected override IPuzzleSolution SolveInternal(StreamProcessingInput input)
         {
             var stremWithoutCanceledCharacters = RemoveCanceled(input.Stream);
             var cleanedStreamWithGarbageCount = RemoveGarbage(stremWithoutCanceledCharacters);

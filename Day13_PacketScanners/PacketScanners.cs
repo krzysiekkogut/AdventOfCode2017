@@ -12,7 +12,7 @@ namespace Day13_PacketScanners
             _findDeleay = foundDeleay;
         }
 
-        protected override PuzzleSolution SolveInternal(PacketScannersInput input)
+        protected override IPuzzleSolution SolveInternal(PacketScannersInput input)
         {
             if (!_findDeleay)
             {

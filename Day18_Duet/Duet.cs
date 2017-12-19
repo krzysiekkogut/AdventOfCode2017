@@ -14,7 +14,7 @@ namespace Day18_Duet
             _programCommunication = programCommunication;
         }
 
-        protected override PuzzleSolution SolveInternal(DuetInput input)
+        protected override IPuzzleSolution SolveInternal(DuetInput input)
         {
             return _programCommunication
                 ? new DuetSolution(SolveProgramsDuet(ExchangeSoundRelatedOperations(input.Operations)))

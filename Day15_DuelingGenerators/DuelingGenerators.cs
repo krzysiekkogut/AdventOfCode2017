@@ -19,7 +19,7 @@ namespace Day15_DuelingGenerators
             _comparisonsCount = additionalCriteria ? 5_000_000 : 40_000_000;
         }
 
-        protected override PuzzleSolution SolveInternal(DuelingGeneratorsInput input)
+        protected override IPuzzleSolution SolveInternal(DuelingGeneratorsInput input)
         {
             var count = 0;
             var compareCount = 0;

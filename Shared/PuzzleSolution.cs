@@ -1,6 +1,6 @@
 ﻿namespace Shared
 {
-    public abstract class PuzzleSolution<T> : PuzzleSolution
+    public abstract class PuzzleSolution<T> : IPuzzleSolution
     {
         protected T _result;
 

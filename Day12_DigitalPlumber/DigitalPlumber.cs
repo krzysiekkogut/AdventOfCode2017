@@ -13,7 +13,7 @@ namespace Day12_DigitalPlumber
             _showNumberOfGroups = showNumberOfGroups;
         }
 
-        protected override PuzzleSolution SolveInternal(DigitalPlumberInput input)
+        protected override IPuzzleSolution SolveInternal(DigitalPlumberInput input)
         {
             var graph = input
                 .ProgramsCommunication

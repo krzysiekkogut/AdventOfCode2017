@@ -11,7 +11,7 @@ namespace Day01_Captcha
             _isStepByOne = isStepByOne;
         }
 
-        protected override PuzzleSolution SolveInternal(CaptchaInput input)
+        protected override IPuzzleSolution SolveInternal(CaptchaInput input)
         {
             var result = 0;
             for (var currentPosiion = 0; currentPosiion < input.Text.Length; currentPosiion++)

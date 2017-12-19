@@ -22,7 +22,7 @@ namespace Day16_PermutationPromenade
             _numberOfDances = oneDance ? 1 : 1_000_000_000;
         }
 
-        protected override PuzzleSolution SolveInternal(PermutationPromenadeInput input)
+        protected override IPuzzleSolution SolveInternal(PermutationPromenadeInput input)
         {
             if (_numberOfDances == 1)
             {
