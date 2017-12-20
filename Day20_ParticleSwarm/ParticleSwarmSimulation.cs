@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Shared;
 
 namespace Day20_ParticleSwarm
@@ -15,46 +13,35 @@ namespace Day20_ParticleSwarm
                 RemoveCollisions(input.Particles);
             }
 
-            return new ParticleSwarmSolution(input.Particles.Count);
+            return new ParticleSwarmSolution(input.Particles.Count(p => p.Active));
         }
 
-        private void MoveParticles(IDictionary<int, Particle> particles)
+        private void MoveParticles(Particle[] particles)
         {
             foreach (var particle in particles)
             {
-                particle.Value.Move();
+                particle.Move();
             }
         }
 
-        private void RemoveCollisions(IDictionary<int, Particle> particles)
+        private void RemoveCollisions(Particle[] particles)
         {
-            var particlesToRemove = new HashSet<int>();
-
-            foreach (var particleNumber in particles.Keys.Where(p => !particlesToRemove.Contains(p)))
+            for (var particleNumber = 0; particleNumber < particles.Length - 1; particleNumber++)
             {
-                if (particlesToRemove.Contains(particleNumber))
+                if (particles[particleNumber].Active)
                 {
-                    continue;
-                }
-
-                foreach (var otherParticleNumber in particles.Keys)
-                {
-                    if (otherParticleNumber <= particleNumber || particlesToRemove.Contains(particleNumber))
+                    for (var otherParticleNumber = particleNumber + 1; otherParticleNumber < particles.Length; otherParticleNumber++)
                     {
-                        continue;
-                    }
-
-                    if (particles[particleNumber].Position.Equals(particles[otherParticleNumber].Position))
-                    {
-                        particlesToRemove.Add(particleNumber);
-                        particlesToRemove.Add(otherParticleNumber);
+                        if (particles[otherParticleNumber].Active)
+                        {
+                            if (particles[particleNumber].Position.Equals(particles[otherParticleNumber].Position))
+                            {
+                                particles[particleNumber].Active = false;
+                                particles[otherParticleNumber].Active = false;
+                            }
+                        }
                     }
                 }
-            }
-
-            foreach (var particleNumber in particlesToRemove)
-            {
-                particles.Remove(particleNumber);
             }
         }
     }

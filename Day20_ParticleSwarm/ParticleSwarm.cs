@@ -9,7 +9,7 @@ namespace Day20_ParticleSwarm
         {
             var minAcceleration = long.MaxValue;
             var particlesWithLowestAcceleration = new List<int>();
-            for (var i = 0; i < input.Particles.Count; i++)
+            for (var i = 0; i < input.Particles.Length; i++)
             {
                 if (input.Particles[i].Acceleration.Distance == minAcceleration)
                 {

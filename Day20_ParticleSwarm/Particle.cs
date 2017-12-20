@@ -5,6 +5,7 @@
         internal Point Position { get; set; }
         internal Point Velocity { get; set; }
         internal Point Acceleration { get; set; }
+        internal bool Active { get; set; } = true;
 
         internal void Move()
         {

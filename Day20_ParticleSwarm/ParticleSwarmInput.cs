@@ -1,6 +1,5 @@
 ﻿using Shared;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -8,11 +7,11 @@ namespace Day20_ParticleSwarm
 {
     public class ParticleSwarmInput : IPuzzleInput<ParticleSwarmInput>
     {
-        public IDictionary<int, Particle> Particles { get; set; }
+        public Particle[] Particles { get; set; }
 
         public ParticleSwarmInput ParseFromText(string textInput)
         {
-            var particles = textInput
+            Particles = textInput
                 .Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                 .Select(particleText =>
                 {
@@ -29,7 +28,6 @@ namespace Day20_ParticleSwarm
                     return particle;
                 })
                 .ToArray();
-            Particles = Enumerable.Range(0, particles.Length).ToDictionary(i => i, i => particles[i]);
             return this;
         }
     }

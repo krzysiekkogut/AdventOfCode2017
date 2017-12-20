@@ -58,14 +58,26 @@ namespace PuzzlesRunner
             };
         }
 
-        static void Main()
+        static void Main(string[] args)
         {
-            while (true)
+            string dayNumber = null;
+            bool loop = true; ;
+            if (args != null && !string.IsNullOrWhiteSpace(args[0]))
             {
-                WriteLine("Type puzzle number, 'all' or 'exit':");
+                dayNumber = args[0];
+                loop = false;
+            }
+
+            do
+            {
+                if (loop)
+                {
+                    WriteLine("Type puzzle number, 'all' or 'exit':");
+                }
+
                 try
                 {
-                    var dayNumber = ReadLine();
+                    dayNumber = dayNumber ?? ReadLine();
                     if (dayNumber.Equals("exit", StringComparison.OrdinalIgnoreCase))
                     {
                         return;
@@ -99,6 +111,7 @@ namespace PuzzlesRunner
                     WriteLine();
                 }
             }
+            while (loop);
         }
 
         private static void SolvePuzzle(string dayNumber)
