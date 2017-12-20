@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day18_Duet", "Day18_Duet\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day19_SeriesOfTubes", "Day19_SeriesOfTubes\Day19_SeriesOfTubes.csproj", "{C44A30CC-1571-4AB4-9D09-1731A2A71182}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day20_ParticleSwarm", "Day20_ParticleSwarm\Day20_ParticleSwarm.csproj", "{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{C44A30CC-1571-4AB4-9D09-1731A2A71182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C44A30CC-1571-4AB4-9D09-1731A2A71182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C44A30CC-1571-4AB4-9D09-1731A2A71182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

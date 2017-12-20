@@ -52,7 +52,9 @@ namespace PuzzlesRunner
                 ["18"] = (typeof(Day18_Duet.Duet), new object[] { false }),
                 ["18b"] = (typeof(Day18_Duet.Duet), new object[] { true }),
                 ["19"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { true }),
-                ["19b"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { false })
+                ["19b"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { false }),
+                ["20"] = (typeof(Day20_ParticleSwarm.ParticleSwarm), new object[] { }),
+                ["20b"] = (typeof(Day20_ParticleSwarm.ParticleSwarmSimulation), new object[] { }),
             };
         }
 

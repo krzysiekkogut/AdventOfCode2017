@@ -126,6 +126,10 @@
       <Project>{c44a30cc-1571-4ab4-9d09-1731a2a71182}</Project>
       <Name>Day19_SeriesOfTubes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day20_ParticleSwarm\Day20_ParticleSwarm.csproj">
+      <Project>{15ee4e01-870d-4ac0-a6c7-0ab1daae3c9d}</Project>
+      <Name>Day20_ParticleSwarm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
