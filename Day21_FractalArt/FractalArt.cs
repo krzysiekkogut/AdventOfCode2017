@@ -6,11 +6,12 @@ namespace Day21_FractalArt
     public class FractalArt : PuzzleSolver<FractalArtInput>
     {
         private const int MaxGridSize = 18;
-        private const int IterationsNumber = 5;
+        private readonly int _iterationsNumber;
         private Grid _grid;
 
-        public FractalArt()
+        public FractalArt(int iterationsNumber)
         {
+            _iterationsNumber = iterationsNumber;
             _grid = new Grid(3);
             _grid.Set(0, 0, '.');
             _grid.Set(0, 1, '#');
@@ -25,7 +26,7 @@ namespace Day21_FractalArt
 
         protected override IPuzzleSolution SolveInternal(FractalArtInput input)
         {
-            for (int i = 0; i < IterationsNumber; i++)
+            for (int i = 0; i < _iterationsNumber; i++)
             {
                 var smallGrids = SplitGrids(_grid.Size % 2 == 0 ? 2 : 3);
                 TransformGrids(smallGrids, input.Rules);

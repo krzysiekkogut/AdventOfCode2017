@@ -55,7 +55,8 @@ namespace PuzzlesRunner
                 ["19b"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { false }),
                 ["20"] = (typeof(Day20_ParticleSwarm.ParticleSwarm), new object[] { }),
                 ["20b"] = (typeof(Day20_ParticleSwarm.ParticleSwarmSimulation), new object[] { }),
-                ["21"] = (typeof(Day21_FractalArt.FractalArt), new object[] { })
+                ["21"] = (typeof(Day21_FractalArt.FractalArt), new object[] { 5 }),
+                ["21b"] = (typeof(Day21_FractalArt.FractalArt), new object[] { 18 })
             };
         }
 
