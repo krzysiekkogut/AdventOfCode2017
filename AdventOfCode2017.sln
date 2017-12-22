@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day19_SeriesOfTubes", "Day1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day20_ParticleSwarm", "Day20_ParticleSwarm\Day20_ParticleSwarm.csproj", "{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day21_FractalArt", "Day21_FractalArt\Day21_FractalArt.csproj", "{1F0800EA-5CC4-4B64-BB35-5988BE267140}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15EE4E01-870D-4AC0-A6C7-0AB1DAAE3C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F0800EA-5CC4-4B64-BB35-5988BE267140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F0800EA-5CC4-4B64-BB35-5988BE267140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F0800EA-5CC4-4B64-BB35-5988BE267140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F0800EA-5CC4-4B64-BB35-5988BE267140}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

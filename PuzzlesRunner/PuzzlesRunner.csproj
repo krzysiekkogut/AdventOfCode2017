@@ -130,6 +130,10 @@
       <Project>{15ee4e01-870d-4ac0-a6c7-0ab1daae3c9d}</Project>
       <Name>Day20_ParticleSwarm</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day21_FractalArt\Day21_FractalArt.csproj">
+      <Project>{1f0800ea-5cc4-4b64-bb35-5988be267140}</Project>
+      <Name>Day21_FractalArt</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

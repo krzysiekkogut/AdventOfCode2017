@@ -55,6 +55,7 @@ namespace PuzzlesRunner
                 ["19b"] = (typeof(Day19_SeriesOfTubes.SeriesOfTubes), new object[] { false }),
                 ["20"] = (typeof(Day20_ParticleSwarm.ParticleSwarm), new object[] { }),
                 ["20b"] = (typeof(Day20_ParticleSwarm.ParticleSwarmSimulation), new object[] { }),
+                ["21"] = (typeof(Day21_FractalArt.FractalArt), new object[] { })
             };
         }
 
@@ -62,7 +63,7 @@ namespace PuzzlesRunner
         {
             string dayNumber = null;
             bool loop = true; ;
-            if (args != null && !string.IsNullOrWhiteSpace(args[0]))
+            if (args != null && args.Length > 0 && !string.IsNullOrWhiteSpace(args[0]))
             {
                 dayNumber = args[0];
                 loop = false;
@@ -108,6 +109,7 @@ namespace PuzzlesRunner
                 }
                 finally
                 {
+                    dayNumber = null;
                     WriteLine();
                 }
             }
