@@ -134,6 +134,10 @@
       <Project>{1f0800ea-5cc4-4b64-bb35-5988be267140}</Project>
       <Name>Day21_FractalArt</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day22_SporificaVirus\Day22_SporificaVirus.csproj">
+      <Project>{36b173c8-2b91-45c6-83a7-bfb30c827466}</Project>
+      <Name>Day22_SporificaVirus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
