@@ -138,6 +138,10 @@
       <Project>{36b173c8-2b91-45c6-83a7-bfb30c827466}</Project>
       <Name>Day22_SporificaVirus</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day23_CoprocessorConflagration\Day23_CoprocessorConflagration.csproj">
+      <Project>{ca864f01-768e-4b88-bf37-934dc3123de7}</Project>
+      <Name>Day23_CoprocessorConflagration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>
