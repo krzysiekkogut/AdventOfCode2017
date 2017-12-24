@@ -15,7 +15,7 @@ namespace Day23_CoprocessorConflagration
 
         protected override IPuzzleSolution SolveInternal(CoprocessorConflagrationInput input)
         {
-            return new CoprocessorConflagrationSolution(_debugMode ? CountMultiplications(input.Operations) : FindValueOfLastRegister(input.Operations));
+            return new CoprocessorConflagrationSolution(_debugMode ? CountMultiplications(input.Operations) : FindValueOfLastRegister());
         }
 
         private long CountMultiplications(Operation[] operations)
@@ -43,7 +43,7 @@ namespace Day23_CoprocessorConflagration
             return multilplicationsCount;
         }
 
-        private long FindValueOfLastRegister(Operation[] operations)
+        private long FindValueOfLastRegister()
         {
             // rewritten code from assembunny to C#
             var nonPrimeCount = 0;
