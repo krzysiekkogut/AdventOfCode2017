@@ -146,6 +146,10 @@
       <Project>{5a30182a-2ae0-427e-b11a-85bfd04fc2ae}</Project>
       <Name>Day24_ElectromagneticMoat</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day25_TheHaltingProblem\Day25_TheHaltingProblem.csproj">
+      <Project>{1649817e-d86b-417c-a958-aeafb3fa944f}</Project>
+      <Name>Day25_TheHaltingProblem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

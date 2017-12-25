@@ -62,7 +62,8 @@ namespace PuzzlesRunner
                 ["23"] = (typeof(Day23_CoprocessorConflagration.CoprocessorConflagration), new object[] { true }),
                 ["23b"] = (typeof(Day23_CoprocessorConflagration.CoprocessorConflagration), new object[] { false }),
                 ["24"] = (typeof(Day24_ElectromagneticMoat.ElectromagneticMoat), new object[] { false }),
-                ["24b"] = (typeof(Day24_ElectromagneticMoat.ElectromagneticMoat), new object[] { true })
+                ["24b"] = (typeof(Day24_ElectromagneticMoat.ElectromagneticMoat), new object[] { true }),
+                ["25"] = (typeof(Day25_TheHaltingProblem.TheHaltingProblem), new object[] { })
             };
         }
 
