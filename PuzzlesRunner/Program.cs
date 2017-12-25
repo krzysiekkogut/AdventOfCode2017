@@ -59,8 +59,10 @@ namespace PuzzlesRunner
                 ["21b"] = (typeof(Day21_FractalArt.FractalArt), new object[] { 18 }),
                 ["22"] = (typeof(Day22_SporificaVirus.SporificaVirus), new object[] { false }),
                 ["22b"] = (typeof(Day22_SporificaVirus.SporificaVirus), new object[] { true }),
-                ["23"] = (typeof(Day23_CoprocessorConflagration.CoprocessorConflagration), new object[] { true}),
-                ["23b"] = (typeof(Day23_CoprocessorConflagration.CoprocessorConflagration), new object[] { false })
+                ["23"] = (typeof(Day23_CoprocessorConflagration.CoprocessorConflagration), new object[] { true }),
+                ["23b"] = (typeof(Day23_CoprocessorConflagration.CoprocessorConflagration), new object[] { false }),
+                ["24"] = (typeof(Day24_ElectromagneticMoat.ElectromagneticMoat), new object[] { false }),
+                ["24b"] = (typeof(Day24_ElectromagneticMoat.ElectromagneticMoat), new object[] { true })
             };
         }
 

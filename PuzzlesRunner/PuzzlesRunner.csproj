@@ -142,6 +142,10 @@
       <Project>{ca864f01-768e-4b88-bf37-934dc3123de7}</Project>
       <Name>Day23_CoprocessorConflagration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day24_ElectromagneticMoat\Day24_ElectromagneticMoat.csproj">
+      <Project>{5a30182a-2ae0-427e-b11a-85bfd04fc2ae}</Project>
+      <Name>Day24_ElectromagneticMoat</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{fc1694ea-6067-4d8c-b978-2f90fa295c7b}</Project>
       <Name>Shared</Name>

@@ -45,7 +45,7 @@ namespace Day23_CoprocessorConflagration
 
         private long FindValueOfLastRegister()
         {
-            // rewritten code from assembunny to C#
+            // rewritten and optimized code from assembunny to C#
             var nonPrimeCount = 0;
 
             for (var i = 106500; i <= 123500; i += 17)

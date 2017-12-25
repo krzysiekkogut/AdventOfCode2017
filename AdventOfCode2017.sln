@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day22_SporificaVirus", "Day
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day23_CoprocessorConflagration", "Day23_CoprocessorConflagration\Day23_CoprocessorConflagration.csproj", "{CA864F01-768E-4B88-BF37-934DC3123DE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day24_ElectromagneticMoat", "Day24_ElectromagneticMoat\Day24_ElectromagneticMoat.csproj", "{5A30182A-2AE0-427E-B11A-85BFD04FC2AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{CA864F01-768E-4B88-BF37-934DC3123DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA864F01-768E-4B88-BF37-934DC3123DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA864F01-768E-4B88-BF37-934DC3123DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A30182A-2AE0-427E-B11A-85BFD04FC2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A30182A-2AE0-427E-B11A-85BFD04FC2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A30182A-2AE0-427E-B11A-85BFD04FC2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A30182A-2AE0-427E-B11A-85BFD04FC2AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
