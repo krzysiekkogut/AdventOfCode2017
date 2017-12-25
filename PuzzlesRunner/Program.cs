@@ -104,7 +104,7 @@ namespace PuzzlesRunner
                         }
 
                         var duration = DateTime.Now - startTime;
-                        WriteLine($"All puzzles solved in {duration.TotalMilliseconds}.");
+                        WriteLine($"All puzzles solved in {duration.TotalMilliseconds.ToString("F2")}.");
                     }
                     else
                     {
